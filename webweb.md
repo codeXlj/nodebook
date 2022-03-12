@@ -1,5 +1,7 @@
 # 1. html/css {#1-htmlcss}
 
+<https://api.helloxlj.top/public/static/file164593915934030934809.gif>
+
 ### 01. html部分 {#01-html部分}
 
 ``` javascript
@@ -541,65 +543,103 @@
 ### 09.setting.json {#09settingjson}
 
 ``` 
-5.VS-code中setting-json配置:
-        {
-        "workbench.editorAssociations": {
-            "*.ipynb": "jupyter.notebook.ipynb"
-        },
-        "editor.mouseWheelZoom": true,
-        "files.autoSave": "onFocusChange",
-        "editor.codeActionsOnSave": null,
-        // "workbench.colorTheme": "Monokai",
-        // "workbench.iconTheme": "material-icon-theme"
-    
-        "editor.tokenColorCustomizations": {
-            "comments": "#82e0aa", // 注释
-        
-        //   "keywords": "#0a0", // 关键字
-        //   "variables": "#f00", // 变量名
-        //   "strings": "#e2d75dbd", // 字符串
-        "functions": "#7FD1E3", // 函数名
-        //   "numbers": "#AE81FF" // 数字
-
-            "textMateRules": [
-            {
-            "name": "Comment",
-            "scope": [
-                "comment",
-                "comment.block",
-                "comment.block.documentation",
-                "comment.line",
-                "comment.line.double-slash",
-                "punctuation.definition.comment",
-            ],
-            "settings": {
-                "fontStyle": "",
-                // 斜体 "fontStyle": "italic",
-                // 斜体下划线 "fontStyle": "italic underline",
-                // 斜体粗体下划线 "fontStyle": "italic bold underline",
-            }
-            },
-        ]
-        },
-            "workbench.colorTheme": "Material Theme Darker High Contrast",
-            "workbench.iconTheme": "material-icon-theme",
-            "leetcode.endpoint": "leetcode-cn",
-            "window.zoomLevel":0.5,
-            "terminal.integrated.fontWeight": null,
-            "explorer.confirmDelete": false,
-            
-            
-        "code-runner.executorMap": {
-        "python":"set PYTHONIOENCODING=utf8 && python"
+{
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter.notebook.ipynb"
+  },
+  "editor.mouseWheelZoom": true,
+  "files.autoSave": "onFocusChange",
+  "editor.codeActionsOnSave": null,
+  // "workbench.colorTheme": "Monokai",
+  // "workbench.iconTheme": "material-icon-theme"
+  "editor.tokenColorCustomizations": {
+    // "comments": "#82e0aa", // 注释
+    "comments": "#85f7b6", // 注释
+    // "keywords": "#f3b565", // 关键字
+    "variables": "#e690f1", // 变量名
+    // "strings": "#e2d75dbd", // 字符串
+    // "functions": "#7FD1E3", // 函数名
+    // "functions": "#f59de2", // 函数名
+    "functions": "#e2682f", // 函数名
+    //   "numbers": "#AE81FF" // 数字
+    "textMateRules": [
+      {
+        "name": "Comment",
+        "scope": [
+          "comment",
+          "comment.block",
+          "comment.block.documentation",
+          "comment.line",
+          "comment.line.double-slash",
+          "punctuation.definition.comment",
+        ],
+        "settings": {
+          "fontStyle": "",
+          "foreground": "#8cf0b6"
+          // "fontStyle": "italic", // 斜体 
+          // 斜体下划线 "fontStyle": "italic underline",
+          //  "fontStyle": "italic bold underline",   //斜体粗体下划线
         }
-
-        }
+      },
+    ]
+  },
+  "workbench.colorTheme": "Material Theme Darker High Contrast",
+  "leetcode.endpoint": "leetcode-cn",
+  "terminal.integrated.fontWeight": null,
+  "explorer.confirmDelete": false,
+  "code-runner.executorMap": {
+    "python": "set PYTHONIOENCODING=utf8 && python"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "workbench.iconTheme": "material-icon-theme",
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "cSpell.userWords": [
+    "boxs",
+    "echarts",
+    "mavon"
+  ],
+  "editor.detectIndentation": false,
+  "vetur.format.defaultFormatter.html": "js-beautify-html",
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  "editor.tabSize": 2,
+  "html.hover.references": false,
+  "css.hover.references": false,
+  "less.hover.references": false,
+  "scss.hover.references": false,
+  "projectManager.git.baseFolders": [
+    "A-Vue"
+  ],
+  "echarts-enhanced-completion.language": "中文",
+  "bracket-pair-colorizer-2.depreciation-notice": false,
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  }
+}
 6.代码折叠
 折叠位置的开始部分  #region
 折叠位置的结束部分  #endregion
 ```
 
 # 2. javascript {#2-javascript}
+
+### important
+
+``` javascript
+1.Object.freeze(变量名)    冻结变量 
+2.
+```
 
 ### 01. 原生js基础 {#01-原生js基础}
 
@@ -832,7 +872,9 @@
             arr.reverse();
          从数组中过滤出符合条件的数组元素;返回的是一个新数组;
             arr.filter(function(var) {return 条件});
-
+		⑦.数组的复制:
+          	let arr = [1, 2, 3, 4, 5, 6];
+          	console.log(arr.copyWithin(4,0,2));
         基础类型的赋值:赋值后没有任何联系;
             对象的引用:赋值后绑定一块;
         补充1:
@@ -3381,7 +3423,7 @@ module.exports = router;
 [官网链接](https://www.baidu.com)
 ````
 
-# 09.ES6 {#09es6}
+# 9.ES6 {#9es6}
 
 ### 01.解构赋值 {#01解构赋值}
 
@@ -3404,7 +3446,7 @@ module.exports = router;
         }
     }
 
-    let {name,age,speak} = obj;
+    let {namename,age,speak} = obj;
     console.log(name);
     console.log(age);
     console.log(speak);
@@ -3591,7 +3633,902 @@ module.exports = {
 
 ------------------------------------------------------------------------
 
-# 10.Git {#10git}
+# 10.js补充 {#10js补充}
+
+### 1.显式原型与隐式原型 {#1显式原型与隐式原型}
+
+-   **每个构造函数都有一个
+    prototype属性，且返回的是一个空的Object属性。（显式原型）**
+
+-   **每个构造函数都有一个 \--proto\-- 属性（隐式原型）**
+
+### 2.instanceof的使用 {#2instanceof的使用}
+
+-   **A instance of B**
+
+-   判断**实例对象A的隐式原型**是否等于**构造函数B的显式原型**， 返回
+    **true** or **false**
+
+### 3.Symobl {#3symobl}
+
+``` javascript
+let name = Symbol("你好生活")
+let des = Symbol("张三")
+console.log(name);        //Symbol(你好生活)
+console.log(name.description);  //你好生活
+
+let b1 = Symbol.for("你好生活")  //Symbol(你好生活)
+console.log(b1);
+console.log(Symbol.keyFor(b1));   //你好生活
+```
+
+### 4.Set {#4set}
+
+``` javascript
+// let arr = [1,2,3,1,1]  
+// console.log(arr)   //可以重复 [1, 2, 3, 1, 1]
+
+// let arr = new  Set([1,4,5,1,2,3])
+// console.log(arr);   // 不可重复{1, 4, 5, 2, 3}
+
+let arr = new Set()
+arr.add(1)
+arr.add(3)
+arr.add(4)
+arr.add(1)
+console.log(arr); //{1, 3, 4}
+
+//获取长度
+console.log(arr.size)  //3
+
+//删除指定内容
+console.log(arr.delete(1))  //有返回值 true or false
+console.log(arr);  //{3, 4}
+
+//清空所有
+arr.clear()
+console.log(arr); //{size: 0}
+
+
+// 遍历set
+let set = new Set([1,22,3,42])
+for(let x of set){
+    console.log(x);
+}
+
+// eg:实现去重(数据类型的转换)
+let set1 = new Set([4,5,6,23,4,5,6])
+let res = new Set([...set1]) 
+console.log(res);   //{4, 5, 6, 23}
+
+
+//并集、交集、差集
+let a = new Set([1,2,4,5,12,22])
+let b = new Set([1,3,4,8,10,22])
+
+//1.并集
+console.log(new Set([...a],[...b]));
+//2.交集
+console.log(new Set([...a].filter(item=>b.has(item))));  //{1, 4, 22}
+//3.差集
+console.log(new Set([...a].filter(item=>!b.has(item))));  //{2, 5, 12}
+```
+
+### 5.WeakSet {#5weakset}
+
+-   与`Set`相比，`WeakSet`
+    只能是**对象的集合**，而不能是任何类型的任意值。
+
+-   `WeakSet`持弱引用：集合中对象的引用为弱引用。
+    如果没有其他的对`WeakSet`中对象的引用，那么这些对象会被当成垃圾回收掉。
+    这也意味着WeakSet中没有存储当前对象的列表。 正因为这样，`WeakSet`
+    是不可枚举的。
+
+------------------------------------------------------------------------
+
+### 6.Map {#6map}
+
+``` javascript
+let map = new Map([["name","123"]])
+map.set("张三","lisi")
+// console.log(map.has("name1"))  //判断是否存在该属性
+// map.delete("name")       //删除指定内容，有返回值
+// map.clear()              //清空所有
+// console.log(map.size)     //得到长度
+// console.log(map.keys());    //得到所有键
+// console.log(map.values());    //得到所有值
+// console.log(map.entries());    //得到所有键值对
+for(let key of map){
+    // console.log(key);     // 遍历每一项
+}
+
+console.log([...map]);    //展开后为数组
+console.log(map);
+```
+
+### 7.WeakMap {#7weakmap}
+
+-   与`Map`相比，`WeakMap` 键只能是**引用类型**。
+
+### 8.闭包 {#8闭包}
+
+-   内部函数总是可以访问其所在的外部函数中声明的变量和参数
+
+-   作用：1.读取函数内部的变量，2.可以让这些变量的值始终保持在内存中
+
+-   注意点：闭包会使得函数中的变量都被保存在内存中，内存消耗很大，不能滥用闭包，否则会造成网页的性能问题，解决：退出函数之前，将不使用的局部变量全部删除。
+
+-   `例子1 可以得到上一层函数中的变量`
+
+``` javascript
+function getName(){
+    let name = "张三"
+    return function(){
+        return name
+    }
+}
+
+let res = getName()
+console.log(res());
+```
+
+-   `例子2 使用闭包返回数组中的元素 (4-11之间的数)`
+
+``` javascript
+let arr = [1,3,4,5,11,7,8,12,3]
+function getMiddle(a,b){
+    return function(v){
+        return v>=a && v<=b
+    }
+}
+console.log(arr.filter(getMiddle(4,11)));
+```
+
+-   `例子3 计时器中使用闭包来获取独有变量`
+
+``` javascript
+<style>
+    button{
+        position: absolute;
+    }
+</style>
+
+<button>点我移动</button>
+<button>点我移动+1+1</button>
+
+let btn = document.querySelectorAll("button");
+btn.forEach(function (item) {
+    let left = 0;
+    let bind = false;
+    item.addEventListener("click", function () {
+        if (!bind) {
+            bind = true;
+            setInterval(function () {
+                item.style.left = left++ + "px";
+            }, 100);
+        }
+    });
+});
+```
+
+-   `例子4 使用闭包导致内存泄漏问题解决`
+
+``` javascript
+<div>张三</div>
+<div>李四</div>
+
+let divs = document.querySelectorAll("div")
+divs.forEach(item=>{
+    let res = item.innerHTML
+    item.addEventListener("click",()=>{
+        console.log(res);
+        //console.log(item);  //会将节点保留在内存中
+    })
+    item = null
+})
+```
+
+### 9.call、apply、bind {#9callapplybind}
+
+-   **call()、apply()、bind() 都是用来重定义 this 的！**
+
+`例子1`
+
+``` javascript
+var name = "KangKang",
+    age = 19;
+let obj = {
+    name: "张三",
+    ObjAge: this.age,
+    show: function () {
+        // console.log(this);      //指向obj
+        console.log(this.name, this.age);
+    },
+};
+
+console.log(obj.ObjAge);      //19
+obj.show();       //张三  undefined
+
+----------------------------------------------------------------
+var p = { name: "KangKang", age: 19 };
+let obj = {
+    name: "张三",
+    ObjAge: this.p.age,
+    show: function () {
+        // console.log(this);  //指向obj
+        console.log(this.name, this.age);
+    },
+};
+
+// console.log(obj.ObjAge); //19
+// obj.show(); //张三  undefined
+obj.show.call(p); //KangKang 19
+```
+
+`例子2 call()、apply()、bind() 都是用来重定义 this 这个对象的`
+
+``` javascript
+var name = "KangKang",
+    age = 19;
+let obj = {
+    name: "张三",
+    ObjAge: this.age,
+    show: function () {
+        // console.log(this);  //指向obj
+        console.log(this.name, this.age);
+    },
+}
+
+var brr = {
+    name:"huawei",
+    age:666
+}
+
+obj.show.call(brr)
+obj.show.apply(brr)
+obj.show.bind(brr)()  //bind返回的是函数
+```
+
+`例子3 call 、bind 、 apply 传参情况下`
+
+``` javascript
+var name = "KangKang",
+    age = 19;
+let obj = {
+    name: "张三",
+    ObjAge: this.age,
+    show: function (a,b) {
+        // console.log(this);  //指向obj
+        console.log(this.name, this.age,a,b);
+    },
+}
+
+var brr = {
+    name:"huawei",
+    age:666
+}
+
+obj.show.call(brr,"任正非","深圳")        //huawei 666 任正非 深圳
+obj.show.apply(brr,["任正非","深圳"])     //huawei 666 任正非 深圳
+obj.show.bind(brr,"任正非","深圳")()      //huawei 666 任正非 深圳
+// obj.show.bind(brr,["任正非","深圳"])()    //huawei 666 ['任正非', '深圳'] undefined
+```
+
+### 10.浅拷贝 {#10浅拷贝}
+
+-   在复制时复制的是新的内存地址，而不是指向同一个内存地址
+
+`例子1  引用的是同一个内存地址`
+
+``` javascript
+let obj = {
+    name:"张三",
+    age:12,
+}
+
+let res = obj
+
+console.log(res);  //{name: '张三', age: 12}
+console.log(obj);    //{name: '张三', age: 12}
+
+res.name="李四"
+console.log(res);  //{name: '李四', age: 12}
+console.log(obj);     //{name: '李四', age: 12}
+```
+
+`例子2  浅拷贝--方法一--赋值`
+
+``` javascript
+let obj = {
+    name:"张三",
+    age:20,
+}
+
+let res = {
+    name:obj.name,
+    age:obj.age
+}
+
+console.log(obj);  //{name: '张三', age: 20}
+console.log(res);  //{name: '张三', age: 20}
+
+res.name="李四"
+console.log(obj);  //{name: '张三', age: 20}
+console.log(res);  //{name: '李四', age: 20}
+```
+
+`例子3  浅拷贝--方法二--遍历`
+
+``` javascript
+let obj = {
+    name: "张三",
+    age: 20,
+};
+
+let res = {};
+for (let key in obj) {
+    res[key] = obj[key];
+}
+
+console.log(obj); //{name: '张三', age: 20}
+console.log(res); //{name: '张三', age: 20}
+
+res.name = "李四";
+console.log(obj); //{name: '张三', age: 20}
+console.log(res); //{name: '李四', age: 20}
+```
+
+`例子4 浅拷贝--方法二--展开语法{...变量名}`
+
+``` javascript
+let obj = {
+    name: "张三",
+    age: 20,
+};
+
+let res = { ...obj };
+
+console.log(obj); //{name: '张三', age: 20}
+console.log(res); //{name: '张三', age: 20}
+
+res.name = "李四";
+console.log(obj); //{name: '张三', age: 20}
+console.log(res); //{name: '李四', age: 20}
+```
+
+`例子5  浅拷贝--方法四--对象的合并-Object.assign()`
+
+``` javascript
+let obj = {
+    name: "张三",
+    age: 20,
+};
+
+let res = Object.assign({}, obj);
+
+console.log(obj); //{name: '张三', age: 20}
+console.log(res); //{name: '张三', age: 20}
+
+res.name = "李四";
+console.log(obj); //{name: '张三', age: 20}
+console.log(res); //{name: '李四', age: 20}
+```
+
+### 11.深拷贝 {#11深拷贝}
+
+`例子1  内层的对象同样引用的是同一个内存地址(浅拷贝只对第一层内起作用)`
+
+``` javascript
+内层的对象同样引用的是同一个内存地址(浅拷贝只对第一层内起作用)
+let obj = {
+    name:"张三",
+    hobby:{
+        play:"games",
+        listen:"music"
+    }
+}
+
+let res = {
+    name:obj.name,
+    hobby:obj.hobby
+}
+
+console.log(JSON.stringify(res,null,2));
+console.log(JSON.stringify(obj,null,2));
+
+res.hobby.play = "football"
+console.log(JSON.stringify(res,null,2));  //值会发生改变
+console.log(JSON.stringify(obj,null,2));  //值会发生改变
+```
+
+`例子2  深拷贝--方法-递归遍历`
+
+``` javascript
+深拷贝--方法-递归遍历
+let obj = {
+    name: "张三",
+    hobby: {
+        play: "games",
+        listen: "music",
+    },
+};
+function deepCopy(data) {
+    let res = {};
+    for (let key in data) {
+        res[key] =
+            typeof data[key] == "object" ? deepCopy(data[key]) : data[key];
+    }
+    return res;
+}
+
+let hh = deepCopy(obj)
+hh.hobby.play = "football";
+console.log(JSON.stringify(hh, null, 2));    //值会发生改变
+console.log(JSON.stringify(obj, null, 2));
+```
+
+`例子3   深拷贝--方法-递归遍历-最终`
+
+``` javascript
+// 深拷贝--方法-递归遍历-最终
+let obj = {
+    name: "张三",
+    hobby: {
+        play: "games",
+        listen: "music",
+    },
+    arr: [],
+};
+function deepCopy(data) {
+    // let res = {};
+    // for (let key in data) {
+    // res[key] =
+    //     typeof data[key] == "object" ? deepCopy(data[key]) : data[key];
+    // }
+    let res = data instanceof Array ? [] : {};
+    //console.log(res);
+    for (let [k, v] of Object.entries(data)) {
+        res[k] = typeof v == "object" ? deepCopy(v) : v;
+    /    console.log(res);
+    }
+    return res;
+}
+
+let hh = deepCopy(obj);
+hh.hobby.play = "football";
+// hh.arr.push("123123")   //报错，不是一个函数
+hh.arr.push(123123);
+console.log(JSON.stringify(hh, null, 2)); //值会发生改变
+console.log(JSON.stringify(obj, null, 2));
+
+// 结果：
+/*
+    {
+      "name": "张三",
+      "hobby": {
+        "play": "football",
+        "listen": "music"
+      },
+      "arr": [
+        123123
+      ]
+    }
+
+    {
+      "name": "张三",
+      "hobby": {
+        "play": "games",
+        "listen": "music"
+      },
+      "arr": []
+    }
+*/
+```
+
+### 12.对象的特征 {#12对象的特征}
+
+`1.Object.getOwnPropertyDescriptor(user,'name')  //得到某一个属性的状态`
+
+`2.Object.getOwnPropertyDescriptors(user)  //得到全部属性的状态`
+
+-   **writable:true, //是否允许赋值（默认false）**
+
+-   **enumerable:true, //是否可以枚举**
+
+-   **configurable:true, //是否可以被修改和删除**
+
+``` javascript
+let user = {
+    name:"张三",
+    age:21
+}
+
+// let res = Object.getOwnPropertyDescriptor(user,'name')  //得到某一个属性的状态
+// Object.getOwnPropertyDescriptors(user) //得到全部属性的状态
+let res = JSON.stringify(CCCC,null,2)  
+console.log(res);
+
+//向对象中添加一个属性
+Object.defineProperty(user,"hobby",{
+    value:"游戏",
+    // writable:true,   //是否允许赋值（默认false）
+    // enumerable:true,   //是否可以枚举
+    configurable:true,    //是否可以被修改和删除
+})
+
+user.hobby= '学习'
+// delete user.hobby
+console.log(user);
+for(let [k,v] of Object.entries(user)){
+    console.log(k,v);    //enumerable:true时可以遍历到hobby
+}
+```
+
+`Object.preventExtensions() 禁止添加属性`
+
+``` javascript
+let user = {
+    name:"张三",
+    age:21
+}
+user.hobby = "游戏"
+console.log(user);   //{name: '张三', age: 21, hobby: '游戏'}
+
+Object.preventExtensions(user)
+
+user.address="河南"
+console.log(user);   //{name: '张三', age: 21, hobby: '游戏'}
+```
+
+`Object.seal() 不可添加、修改、删除、重新定义特征`
+
+`Object.isSealed() 判断对象是否被封闭`
+
+``` javascript
+//封闭属性 Object.seal() 不可添加、删除、重新定义特征
+//Object.isSealed() 判断对象是否被封闭
+let user = {
+    name: "张三",
+    age: 21,
+};
+
+console.log(JSON.stringify(Object.getOwnPropertyDescriptors(user),null,2));
+
+Object.seal(user)
+console.log(Object.isSealed(user));   //判断对象是否被封闭
+
+console.log(JSON.stringify(Object.getOwnPropertyDescriptors(user),null,2));
+```
+
+`Object.freeze() 不可添加、修改、删除、重新定义特征 作用范围比seal广`
+
+`Object.isFrozen() 判断对象是否被冻结`
+
+``` javascript
+//冻结属性 Object.freeze() 不可添加、修改、删除、重新定义特征 作用范围比seal广
+//Object.isFrozen() 判断对象是否被冻结
+let user = {
+    name: "张三",
+    age: 21,
+};
+
+console.log(JSON.stringify(Object.getOwnPropertyDescriptors(user),null,2));
+
+Object.freeze(user)
+console.log(Object.isFrozen(user));   //判断对象是否被冻结
+
+console.log(JSON.stringify(Object.getOwnPropertyDescriptors(user),null,2));
+```
+
+### 13.访问器 {#13访问器}
+
+`例子1`
+
+``` javascript
+//未使用访问器之前
+let obj = {
+    name:"张三",
+    age:21,
+    show(value){
+        console.log(value)
+    }
+}
+obj.show("哈哈")
+
+//使用访问器
+let obj = {
+    name:"张三",
+    age:21,
+    set show(value){
+        console.log(value)
+    }
+}
+obj.show = "嘻嘻"
+```
+
+`例子2 访问器伪造属性 --（计算属性）`
+
+``` javascript
+//访问器伪造属性 --（计算属性）
+let obj = {
+    list:[
+        {name:"xiaomi",price:2100},
+        {name:"iphone",price:3100},
+        {name:"华为",price:4100},
+    ],
+    get price(){
+        return this.list.reduce((total,item)=>total+item.price,0)
+    }
+}
+
+console.log(obj.price);   //9300
+obj.price = 8888          //修改无效
+console.log(obj.price);   //9300
+```
+
+`例子3 使用访问器批量设置属性`
+
+``` javascript
+//使用访问器批量设置属性
+let obj = {
+    name: "KangKang",
+    age: 10,
+    set show(value) {
+        [this.name, this.age] = value.split(",");
+    },
+    get Info() {
+        return `${this.name}---${this.age}`;
+    },
+};
+
+obj.show = "李四,22";
+console.log(obj.Info); //李四---22
+```
+
+### 14.proxy {#14proxy}
+
+`1.数组通过代理拦截`
+
+``` javascript
+let obj = [
+    {
+        title:"机会是留给有准备的人",
+        name:"Mysql"
+    },
+    {
+        title:"以梦为马，不负韶华",
+        name:"Web前端"
+    },
+    {
+        title:"刚好，让你更好",
+        name:"Java"
+    },
+]
+
+let proxy = new Proxy(obj,{
+    get(array,key){
+        console.log(array[key]);
+        let len = 5
+        array[key].title = array[key].title.length>len?array[key].title.substr(0,len):array[key].title
+        return array[key]
+    }
+})
+
+console.log(proxy[0]);
+```
+
+`2.proxy实现数据的双向绑定`
+
+``` javascript
+<input type="text" v-model="content" />
+<h4 v-bind="content">显示中...</h4>
+<hr />
+<input type="text" v-model="title" />
+<input type="text" v-model="title" />
+<h4 v-bind="title">显示中...</h4>
+
+function Test() {
+    let proxy = new Proxy(
+        {},
+        {
+            get(obj, prop) {},
+            set(obj, prop, value) {
+                // console.log(obj, prop, value);
+                document
+                    .querySelectorAll(`[v-model='${prop}']`)
+                    .forEach((item) => {
+                    item.value = value;
+                });
+                document
+                    .querySelectorAll(`[v-bind='${prop}']`)
+                    .forEach((item) => {
+                    item.innerHTML = value;
+                });
+            },
+        }
+    );
+
+    this.info = function () {
+        let els = document.querySelectorAll("[v-model]");
+        els.forEach((item) => {
+            item.addEventListener("keyup", function () {
+                proxy[this.getAttribute("v-model")] = this.value;
+            });
+        });
+    };
+}
+
+new Test().info();
+```
+
+### 15.构造函数 {#15构造函数}
+
+##### 15.1 关于实例成员和静态成员 {#151-关于实例成员和静态成员}
+
+``` javascript
+function User(name,age){
+	//实例成员
+    this.name = name
+    this.age = age
+}
+//静态成员
+User.hobby = "游戏"
+
+console.log(User.name);  //User  实例成员无法通过构造函数直接访问 
+console.log(User.hobby);  //游戏  
+
+let user = new User("张三",21)
+console.log(user.name);    //张三  通过实例对象可以访问到实例成员
+console.log(user.age);     //21
+```
+
+##### 15.2 关于每个实例中的方法是否都是共享 {#152-关于每个实例中的方法是否都是共享}
+
+-   **实例1 如果直接在构造函数中定义的方法不共享**
+
+``` javascript
+//实例1 如果直接在构造函数中定义的方法不共享
+function User(){
+    this.show = function(){
+        console.log("show")
+    }
+}
+
+let user1 = new User()   
+let user2 = new User()
+user1.show()   //show
+user1.show()   //show
+console.log(user1.show === user2.show );   //false
+
+//## 通过构造函数创建的实例,每次生成的实例实际上都是一个新得内存空间。同时还会导致大量的内存浪费
+```
+
+-   **实例2 在构造函数的原型中定义的方法可以实现共享**
+
+``` javascript
+function User(){}
+
+User.prototype.show = function(){
+    console.log("show");
+}
+
+let user1 = new User()   
+let user2 = new User()
+user1.show()   //show
+user1.show()   //show
+console.log(user1.show === user2.show );   //true
+```
+
+##### 15.3 new一个新对象的过程 {#153--new一个新对象的过程}
+
+\(1\) 创建一个空对象 user`{}`\
+(2) 为 user准备原型链连接 `user.__proto__ = User.prototype`\
+(3) 重新绑定this，使构造函数的this指向新对象 `User.call(this)`\
+(4) 为新对象属性赋值 `user.name`\
+(5) 返回this `return this`，此时的新对象就拥有了构造函数的方法和属性了
+
+### 16. 原型 {#16-原型}
+
+-   原型的作用：实现方法共享，不会导致反复的开辟空间存储方法
+
+### 17.原型链 {#17原型链}
+
+-   解释：原型与原型层层相链接的过程即为原型链。
+
+-   原型的查找方式： 当前-原型-Object-报错
+
+-   原型的构造器：原型的构造器指向构造函数
+
+-   ``` javascript
+    function User(){}
+
+    let user1 = new User()
+    console.log(user1.__proto__.constructor === User);  //true
+    console.log(User.prototype.constructor === User);  //true
+    ```
+
+-   一般不允许直接改变原型`prototype`指向
+
+`改变原型指向，会使原生的方法都没了，所以Array、String这些内置的方法是不允许改变原型指向的。如果改变了，就会报错。`
+
+``` javascript
+//未改变
+Array.prototype.getSum = function(arr){
+    return arr.reduce((t,item)=>{
+        return t+=item 
+    },0)
+}
+
+let arr1 = [1,2,3,4,5,6,7,9,9,10]
+let arr = new Array()
+console.log(arr.getSum(arr1));  //56
+
+//改变
+Array.prototype = {
+    getSum(arr){
+        return arr.reduce((t,item)=>{
+            return t+=item 
+        },0)
+    }
+}
+let arr1 = [1,2,3,4,5,6,7,9,9,10]
+let arr = new Array()
+console.log(arr.getSum(arr1));    //报错
+```
+
+### 18.类 {#18类}
+
+##### 18.1类和构造函数 {#181类和构造函数}
+
+``` javascript
+//使用类
+class User{
+    constructor(name){
+        this.name = name
+    }
+    show(){
+        console.log("user-show()");
+    }
+    get(){
+        console.log("get()--"+this.name);
+    }
+    test(arg){
+        console.log("test()--"+arg);
+    }
+}
+console.dir(User);        
+let user = new User("张三")
+console.log(user.name);       //张三
+user.get();                  //get()--张三
+console.log(User.prototype.constructor === User);   //true
+user.test("better")    //test()--better
+console.log(User.prototype);    //{constructor: ƒ, show: ƒ, get: ƒ}
+
+//使用构造函数
+function Admin(name){
+    this.name = name
+}
+Admin.prototype.show = function(){
+    console.log("Admin-show()");
+}
+Admin.prototype.get = function(){
+    console.log("get()--"+this.name);
+}
+Admin.prototype.test = function(arg){
+    console.log("test()--"+arg);
+}
+
+
+console.dir(Admin);
+let a = new Admin("李四")            
+a.show();           //Admin-show()
+a.get()             //get()--李四
+a.test("good")             //test()--good
+console.log(Admin.prototype.constructor === Admin);   //true
+console.log(Admin.prototype)    //{show: ƒ, get: ƒ, test: ƒ, constructor: ƒ}
+```
+
+# 11.Git {#11git}
 
 **1.区域**
 
@@ -3647,7 +4584,6 @@ module.exports = {
   git branch -v         查看分支                     
   git checkout 分支名   切换分支                     
   git merge 分支名      把指定的分支合并到当前分支   
-                                                     
 
 **6.远程仓库的操作**
 
@@ -3691,7 +4627,7 @@ pnpm-debug.log*
 *.sw?
 ```
 
-9
+9.本地上传远程仓库的命令
 
 ``` 
 echo "# Miraitowa-serve" >> README.md
@@ -3710,7 +4646,188 @@ git branch -M main
 git push -u origin main
 ```
 
-# 10.Vue {#10vue}
+# 常用三方库
+
+### 小程序
+
+#### 1.富文本html2wxml {#1富文本html2wxml}
+
+-   **html2wxml**
+    `https://gitee.com/matols/html2wxml#https://gitee.com/link?target=https%3A%2F%2Fgithub.com%2Ficindy%2FwxParse`
+
+### Vue
+
+#### 1.图片的懒加载 {#1图片的懒加载}
+
+-   **vue-lazyload** `https://www.npmjs.com/package/vue-lazyload`
+
+#### 2.进度条nprogress {#2进度条nprogress}
+
+-   **nprogress** `https://www.npmjs.com/package/nprogress`
+
+#### 3.函数的防抖与节流 {#3函数的防抖与节流}
+
+-   **lodash** `https://www.lodashjs.com/docs/lodash.debounce`
+
+-   防抖：前面的所有触发都被取消，最后一个执行在规定的时间之后才会执行，也就是说如果连续快速的触发，只会执行一次
+
+-   节流：在规定的时间内不会重复执行回调，只有超出规定的时间后才会执行，把频繁触发变为少量触发
+
+-   简单的来说防抖和节流：
+
+    -   防抖：用户操作很频繁，但只会执行一次
+        `_.debounce(func, [wait=0], [options=])`
+
+    -   节流：用户操作很频繁，把频繁触发变为少量触发
+        `_.throttle(func, [wait=0], [options=]`
+
+#### 4.表单验证vee-validate {#4表单验证vee-validate}
+
+**vee-validate 基本使用**
+
+-   第一步：插件安装与引入\
+    **cnpm i vee-validate\@2 \--save** 安装的插件安装2版本的
+
+``` javascript
+import VeeValidate from 'vee-validate'
+import zh_CN from 'vee-validate/dist/locale/zh_CN'   // 引入中文 message
+Vue.use(VeeValidate)
+```
+
+-   第二步：提示信息
+
+``` javascript
+VeeValidate.Validator.localize('zh_CN', {
+messages: {
+    ...zh_CN.messages,
+    is: (field) => `${field}必须与密码相同` // 修改内置规则的 message，让确认密码和密码相同
+    },
+    attributes: { // 给校验的 field 属性名映射中文名称
+    phone: '手机号',
+    code: '验证码',
+    password:'密码',
+    password1:'确认密码',
+    isCheck:'协议'
+    }
+})
+```
+
+-   第三步：基本使用
+
+``` javascript
+ <input
+    placeholder="请输入你的手机号"
+    v-model="phone"
+    name="phone"
+    v-validate="{ required: true, regex: /^1\d{10}$/ }"
+    :class="{ invalid: errors.has('phone') }"
+  />
+  <span class="error-msg">{{ errors.first("phone") }}</span>
+
+const success = await this.$validator.validateAll(); //全部表单验证
+
+//自定义校验规则
+//定义协议必须打勾同意
+VeeValidate.Validator.extend('agree', {
+validate: value => {
+return value
+},
+getMessage: field => field + '必须同意'
+})
+```
+
+#### 5.二维码插件qrcode {#5二维码插件qrcode}
+
+展示二维码\-\-\--qrcode插件\
+通过qrCode.toDataUrl方法，将字符串转换为加密的在线二维码链接，通过图片进行展示。\
+moment.js\
+swiper.js\
+nprogress.js\
+qrcode.js
+
+#### 6. vue解决首屏加载缓慢问题 {#6-vue解决首屏加载缓慢问题}
+
+**1.客户端**：
+
+``` javascript
+1.安装依赖：
+	npm install compression-webpack-plugin @5 -S
+
+2.在vue.config.js中配置以下内容
+    const CompressionPlugin = require('compression-webpack-plugin');
+    configureWebpack: {
+        plugins: [
+            new CompressionPlugin({
+                algorithm:'gzip',
+                test:/\.(js|css|woff|woff2|svg)$/,  // 要压缩的文件
+                threshold:10240, // 压缩超过10k的数据
+                deleteOriginalAssets:false, // 不删除压缩前的文件，如果浏览器不支持Gzip，则会加载源文件
+                minRatio:0.8 // 压缩比大于0.8的文件将不会被压缩
+            })
+        ],
+    },
+```
+
+**2.服务端**
+
+``` javascript
+1.安装依赖：
+	npm install compression
+    
+2.在app.js中引入以下内容
+    var compression = require('compression');   // 引入compresssion
+    //const app = express()
+    app.use(compression()); 
+```
+
+# 12.Vue {#12vue}
+
+### imporant
+
+#### 1.vue中路由路由的传参 {#1vue中路由路由的传参}
+
+-   字符串写法
+
+-   模板字符串
+
+-   对象 this.\$router.push({name：\"/search\",params:{name:\"张三\"}})
+
+#### 2.parmas和query传参的注意点 {#2parmas和query传参的注意点}
+
+-   params
+    属于路径的一部分，传参时**必须先占位**，**跳转时只能使用name**
+
+-   query 不属于路径分一部分，类似于get传参 ？name=12&age=12
+
+-   在使用params参数时，配置中进行了**占位而不传递参数**会导致路径错误
+    。解决：在配置中**占位后加？**
+
+-   在使用params参数时，如果**传入的为空**也会导致路径错误。
+    解决：this.\$router.push({name：\"/search\",params:{name:\"\" **\|\|
+    undefined**}})
+
+#### 3.路由组件可以传递props：三种写法 {#3路由组件可以传递props三种写法}
+
+-   布尔值写法：props ：true
+
+-   对象写法 ：props ：{}
+
+-   函数写法：props ：function( \$route ){ return { name :
+    this.\$route.name} }
+
+#### 4.常用 {#4常用}
+
+**1:属性修饰符.sync，可以实现父子数据同步。**\
+以后在elementUI组件中出现，实现父子数据同步。
+
+**2\$attrs与\$listeners \-\-\--vue-helper 父子组件通信**\
+\$attrs：组件实例的属性，可以获取到父亲传递的props数据（前提子组件没有通过props接受）\
+\$listeners：组件实例的属性，可以获取到父亲传递自定义事件（对象形式呈现）
+
+**3:\$children与\$parent 可以实现父子组件通信**\
+ref:可以在父组件内部获取子组件\-\--实现父子通信\
+\$children:可以在父组件内部获取全部的子组件【返回数组】\
+\$parent:可以在子组件内部获取唯一的父组件【返回组件实例】
 
 ### 01.基础用法 {#01基础用法}
 
@@ -4430,31 +5547,25 @@ main.js
         ``` javascript
         1.安装
         npm install jquery --save
-        npm install bootstrap --save
-        npm install --save @popperjs/core
+        npm install bootstrap@3 --save   //高版本会出错
 
         2.在main.js中引入
         import "bootstrap";
 
-        3.创建vue.config.js并添加以下配置
+        3.可创建vue.config.js并添加以下配置
 
         const webpack = require("webpack");
         module.exports = {
-            configureWebpack: {
-                plugins: [
-                    new webpack.ProvidePlugin({
-                        $: 'jquery',
-                        jQuery: 'jquery',
-                        'window.jQuery': 'jquery',
-                        Popper: ['popper.js', 'default']
-                      })
-                ]
-              }
+          lintOnSave : false,    //关闭语法检查
+          configureWebpack: {
+            plugins: [
+              new webpack.ProvidePlugin({
+                  jQuery: 'jquery',
+                  $: 'jquery'
+              })
+          ]
+          }
         }
-
-
-
-
         ```
 
 # Vue2
@@ -6377,9 +7488,9 @@ npm run dev
 
 -   \...\...
 
-### 11.常用url {#11常用url}
+# 11.常用url {#11常用url}
 
-#### 01.demo {#01demo}
+#### 1.demo {#1demo}
 
 ``` javascript
 01、https://www.npmjs.com/?track=newUserCreated    -- npm安装第三方资源包
@@ -6425,7 +7536,9 @@ npm run dev
 5.关键字查询 + 倒叙查询
 	顺序:  select--from--where--group by--having--order by
   	select *  from 表名  where 字段名 like "%值%" order by 字段名 desc;
-
+6.分页
+ select *  from 表名  limit (pageNo)-1）*pageSize,pageSize   pageNo:当前页码  pageSize:每页展示的条数
+ `select * from Tong order by Tid desc limit ${(pageOn-1) * pageCount}, ${pageCount}`; //order by 字段名 desc;
 ```
 
 ### 02.插入 {#02插入}
