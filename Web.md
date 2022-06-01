@@ -13,7 +13,7 @@
     3.实体字符:
      空格 &nbsp
      <  &lt
-     >  &gt
+     >  &gt	
     4.设置光标的样式   cursor:help/pointer
     5.设置层叠顺序    z-index = number
     7.火狐获取页面内容      ctrl+i
@@ -5038,12 +5038,17 @@ console.log(s2);  //{name: '李四', age: 19, gender: '女', speak: ƒ}
 
 ### 5.分支指令: {#5分支指令}
 
-  命令                  含义                         备注
-  --------------------- ---------------------------- ------
-  git branch 分支名     创建分支名                   
-  git branch -v         查看分支                     
-  git checkout 分支名   切换分支                     
-  git merge 分支名      把指定的分支合并到当前分支   
+  命令                                    含义                         备注
+  --------------------------------------- ---------------------------- ------
+  git branch 分支名                       创建分支名                   
+  git branch -v                           查看分支                     
+  git checkout 分支名                     切换分支                     
+  git checkout -b 分支名                  创建并切换分支               
+  git switch -c master                    切换分支                     
+  git merge 分支名                        把指定的分支合并到当前分支   
+  git branch -d 本地分支名                删除本地分支                 
+  git push oirgin 远程分支名:本地分支名   将分支推送至远程仓库         
+  git push oirgin :本地分支名             移除远程分支                 
 
 ### 6.远程仓库的操作 {#6远程仓库的操作}
 
@@ -7970,7 +7975,7 @@ npm run dev
 
 -   \...\...
 
-# React
+# React {#react-1}
 
 ### 1.jsx语法 {#1jsx语法}
 
@@ -10466,33 +10471,43 @@ componentDidCatch(error, info) {
 
 # Mysql
 
-### 01.查询 {#01查询}
+### 1.查询 {#1查询}
 
 ``` mysql
 1.查询语句所有数据:
 	select * from 表名;
 2.查询指定数据:
 	select * from 表名 where 字段名 = '值';   (and / or)
-3.关键字查询/模糊查询:
+3.查询符合条件的指定数据:
+	select name,age,sex from 表名 where 字段名 = '值';  
+4.关键字查询/模糊查询:
 	select * from 表名 where 字段名 like "%值%" or 字段名 like "%值%";
-4.倒叙查询
+5.倒叙查询
 	select *  from 表名  order by 字段名 desc ;
-5.关键字查询 + 倒叙查询
-	顺序:  select--from--where--group by--having--order by
+6.关键字查询 + 倒叙查询
   	select *  from 表名  where 字段名 like "%值%" order by 字段名 desc;
-6.分页
- select *  from 表名  limit (pageNo)-1）*pageSize,pageSize   pageNo:当前页码  pageSize:每页展示的条数
- `select * from Tong order by Tid desc limit ${(pageOn-1) * pageCount}, ${pageCount}`; //order by 字段名 desc;
+7.分页
+	select * from 表名 limit 2 offset 0  //表示从第一页查询两条据
+ 	select *  from 表名  limit (pageNo)-1）*pageSize,pageSize   pageNo:当前页码  pageSize:每页展示的条数
+ 	`select * from Tong order by Tid desc limit ${(pageOn-1) * pageCount}, ${pageCount}`; //order by 字段名 desc;
+8.查询总的条数
+	SELECT COUNT(*) FROM 表名;     获得数据总条数 -返回的字段名为count(*)
+	SELECT COUNT(*) num FROM 表名;     返回的字段名为num
+9.联表查询
+	场景描述: student 学生表 classes 班级表
+	1).select student.name,student.age,classes.name from student inner join classes on student.stuId=classes.classesId // 优化：命名冲突和另起别名
+	2).select s.name sname,s.age,c.name cname from student s inner join classes c on s.stuId=c.classId
+	*注: inner / left / right  -分别表示- 内联接 / 左联接 / 右联接
 ```
 
-### 02.插入 {#02插入}
+### 2.插入 {#2插入}
 
 ``` mysql
 1.插入多个内容:
 	insert into 表名(字段1,字段2,字段3) values("值1","值2","值3");
 ```
 
-### 03.修改 {#03修改}
+### 3.修改 {#3修改}
 
 ``` mysql
 1.修改内容:
@@ -10500,7 +10515,7 @@ componentDidCatch(error, info) {
 	
 ```
 
-### 04.删除 {#04删除}
+### 4.删除 {#4删除}
 
 ``` mysql
 1.删除所有内容:
@@ -10509,7 +10524,26 @@ componentDidCatch(error, info) {
 	delete from 表名 where 字段名 = "值";
 ```
 
-### 05.分页查询 {#05分页查询}
+### 5.外键约束 {#5外键约束}
+
+> ### `CASCADE` 
+>
+> 在父表上update/delete时，同步update/delete掉子表中匹配的数据
+
+> ### `SET NULL`
+>
+> 在父表上update/delete时，将子表上匹配数据的列设为null
+> (子表的外键列不能为not null)
+
+> ### `NO ACTION`
+>
+> 如果子表中有匹配的记录时，则不允许对父表对应候选键进行update/delete操作
+
+> ### `RESTRICT`
+>
+> 同no action,都是立即检查外键约束
+
+### 5.分页查询 {#5分页查询}
 
 ``` javascript
 1. 	select * from 表名 limit  2,3     
@@ -10983,6 +11017,165 @@ floorInfoImgRouter.post('/wb/uploadFloorInfoMany', upload.array('wb', 12), funct
   </router-view>
 ```
 
+14.Vue项目配置别名后智能提示
+
+> 根目录创建jsconfig.json文件
+
+``` javascript
+{
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "baseUrl": "./",
+    "paths": {
+      "@/*": [
+        "src/*"
+      ]
+    },
+  },
+}
+```
+
+### dev调试
+
+``` 
+const store = createStore(
+  rootReducer,
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+)
+```
+
+### 14.socket io服务端 {#14socket-io服务端}
+
+``` javascript
+//token 校验应用中间键
+app.use((req,res,next)=>{
+  if(req.url.includes("/login")){
+    next()
+    return
+  }
+  const token = req.headers.authorization?.split(" ")[1]
+  if(token){
+    const payload = JWT.verifyToken(token)
+    if(payload){
+      const {username,psd} = payload
+      const token = JWT.setToken({username,psd},"6000s")
+      res.header("Authorization",token)
+      res.header("Access-Control-Expose-Headers", "Authorization");
+
+      next()
+    }else{
+      res.status(401).send({
+        code:401,
+        msg:"token失效"
+      })
+    }
+  }else{
+    next()
+  }
+})
+
+
+const express = require("express")
+const app = express()
+const server = require('http').createServer(app);
+const { Server } =require("socket.io");
+const io = new Server(server, {
+  cors: {
+    origin: "http://localhost:3000"
+  }
+});
+io.on('connection', (socket) => { 
+  // socket.broadcast.emit("hello", "world"); //广播
+  const token  = socket.handshake.query?.token
+  const payload = JWT.verifyToken(token)
+  if(payload){
+    socket.emit("hello", "欢迎你进入");
+  }else{
+    socket.emit(WebsocketType.error,createMessage(null,"token失效"))
+  }
+});
+
+const WebsocketType = {
+  error:0,
+  siliao:1,
+  sendAll:2,
+  getList:3
+}
+const createMessage = (user,msg)=>{
+  return {
+    user,
+    msg
+  }
+}
+
+//监听端口
+server.listen(3333,_=>{
+  console.log("服务器已启动： http://localhost:3333");
+})
+```
+
+### 15.css用法 {#15css用法}
+
+-   #### 三角形的绘制
+
+``` css
+<h1>你好生活</h1>
+
+ h1 {
+     width: 200px;
+     background-image: linear-gradient(
+         to right,
+         red,
+         rgb(147, 185, 239),
+         rgb(217, 123, 233),
+         rgb(248, 244, 244)
+     );
+     -webkit-background-clip: text;
+     color: transparent;
+}
+```
+
+-   #### 背景渐变的过渡
+
+``` css
+<div class="triangle"></div>
+
+.triangle {
+    width: 0px;
+    height: 0px;
+    border: 10px solid transparent;
+    border-bottom: 10px solid red;
+}
+```
+
+-   #### 文字的渐变 
+
+``` css
+<div class="box"></div>
+
+.box {
+    width: 200px;
+    height: 80px;
+    background-image: linear-gradient(
+        to right,
+        rgb(147, 185, 239),
+        rgb(18, 194, 225),
+        rgb(152, 226, 144),
+        red
+    );
+    background-size: 200%;
+    transition: all 3s;
+}
+.box:hover {
+    cursor: pointer;
+    background-image: linear-gradient(
+        to right bottom,
+        rgb(43, 0, 255),
+    );
+    background-position: 100% 0;    
+}
+```
+
 # api接口
 
 ### 1.开放接口 {#1开放接口}
@@ -11026,7 +11219,11 @@ https://api.apiopen.top/searchMusic?name=不要说话
 https://api.apiopen.top/musicBroadcasting
 
 音乐电台详情接口：
-https://api.apiopen.top/musicBroadcastingDetails?channelname=public_tuijian_spring
+https://api.apiopen.top/musicBroadcastingDetails?channelname=public_tuijian_spring`
+
+
+
+
 
 音乐详情接口：
 https://api.apiopen.top/musicDetails?id=604392760
@@ -11885,4 +12082,74 @@ module.exports = getQuery;
 26.https://www.jq22.com/     //jQuery插件库
 ```
 
-\#
+# 常用三方依赖
+
+### 1.动画库 {#1动画库}
+
+> #### Hover.css {#hovercss-1}
+>
+> **`http://ianlunn.github.io/Hover/`**
+
+> #### animejs
+>
+> **`https://animejs.com/`**
+
+> #### animate
+>
+> **`https://animate.style/`**
+
+> #### particles 
+>
+> -   粒子效果
+>
+> **`https://particles.js.org/`**
+
+> #### mojs
+>
+> **`https://mojs.github.io/`**
+
+> #### Hover.css {#hovercss-2}
+>
+> **`http://ianlunn.github.io/Hover/`**
+
+### 2.富文本编辑器 {#2富文本编辑器}
+
+> #### md-editor-v3 
+>
+> -   Vue、React
+>
+> **`https://github.com/imzbf/md-editor-v3/blob/dev/README-CN.md`**
+
+> #### wangeditor
+>
+> -   Vue、React
+>
+> **`https://www.wangeditor.com/`**
+
+> #### Hover.css {#hovercss-3}
+>
+> **`http://ianlunn.github.io/Hover/`**
+
+> #### html2wxml 
+>
+> -   小程序
+>
+> **`https://gitee.com/matols/html2wxml#https://gitee.com/link?target=https%3A%2F%2Fgithub.com%2Ficindy%2FwxParse`**
+
+### React
+
+> #### helmet
+>
+> -   页签标题
+>
+> **`https://www.npmjs.com/package/react-helmet`**
+
+> #### framer-motion
+>
+> -   组件过渡动画
+>
+> **`https://www.npmjs.com/package/framer-motion`**
+
+> #### Hover.css {#hovercss-4}
+>
+> **`http://ianlunn.github.io/Hover/`**
